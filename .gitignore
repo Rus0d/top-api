@@ -38,4 +38,4 @@ lerna-debug.log*
 /mongo-data-4.4
 
 # Environment constants
-/.env
+.env*
