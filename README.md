@@ -57,3 +57,19 @@ $ npm run test:e2e
 # test coverage
 $ npm run test:cov
 ```
+
+## Docker
+
+```bash
+# raise docker compose 
+$ docker-compose up -d
+
+# show all containers
+$ docker ps
+
+# stop container
+$ docker stop containerName/containerId
+
+# start container
+$ docker start containerName/containerId
+```
