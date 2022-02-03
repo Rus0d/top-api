@@ -16,15 +16,21 @@ export class ReviewService {
     return this.reviewModel.create(dto);
   }
 
-  async delete(id: string): Promise<DocumentType<ReviewModel> | null> {
-    return this.reviewModel.findByIdAndDelete(id).exec();
-  }
-
   async findByProductId(
     productId: string,
   ): Promise<DocumentType<ReviewModel>[]> {
     return this.reviewModel
       .find({ productId: new Types.ObjectId(productId) })
+      .exec();
+  }
+
+  async delete(id: string): Promise<DocumentType<ReviewModel> | null> {
+    return this.reviewModel.findByIdAndDelete(id).exec();
+  }
+
+  async deleteByProductId(productId: string) {
+    return this.reviewModel
+      .deleteMany({ productId: new Types.ObjectId(productId) })
       .exec();
   }
 }
